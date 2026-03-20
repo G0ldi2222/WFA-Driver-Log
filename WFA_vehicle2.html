@@ -502,7 +502,7 @@ textarea { resize: none; min-height: 78px; }
 </div>
 
 <script>
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw5xd4Q1YhZhuKVvIQ4c1KeXPcqtsEelRApN1I4hgSb1BERw5NGHV7UbfvtCYrLqDa6Gg/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzhu3g7l9EbLqknK2WDgboLO5cswIkCYjDS3gBrycx-lhWwEnPKOe9zVj-10uTdVqbL7g/exec";
 const PLATE = "2กก5374 — ISUZU D-Max (4 Door)";
 const STORAGE_KEY = "wfa_trip_" + PLATE;
 
@@ -741,14 +741,12 @@ async function submitForm() {
     timestamp:   new Date().toISOString(),
   };
 
-  // JSONP — uses <script> tag which bypasses ALL browser security restrictions
   await new Promise((resolve) => {
     const callbackName = "wfa_cb_" + Date.now();
     window[callbackName] = function(response) {
       delete window[callbackName];
-      document.getElementById("jsonp_container").removeChild(
-        document.getElementById("jsonp_container").lastChild
-      );
+      const container = document.getElementById("jsonp_container");
+      if (container.lastChild) container.removeChild(container.lastChild);
       resolve(response);
     };
     const script = document.createElement("script");
@@ -757,7 +755,6 @@ async function submitForm() {
       "&data=" + encodeURIComponent(JSON.stringify(payload));
     script.onerror = function() { resolve({ status: "error" }); };
     document.getElementById("jsonp_container").appendChild(script);
-    // Timeout after 10 seconds
     setTimeout(() => resolve({ status: "timeout" }), 10000);
   });
 
@@ -792,6 +789,5 @@ function resetForm() {
   startFreshForm();
 }
 </script>
-<div id="jsonp_container" style="display:none"></div>
 </body>
 </html>
