@@ -502,7 +502,7 @@ textarea { resize: none; min-height: 78px; }
 </div>
 
 <script>
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzgKq6B-no9rY5H2elzhXUqn7iCfCF_feBmNTJAV9PZwmUDwFxi07IEyONXFT2CnVgxhA/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw5xd4Q1YhZhuKVvIQ4c1KeXPcqtsEelRApN1I4hgSb1BERw5NGHV7UbfvtCYrLqDa6Gg/exec";
 const PLATE = "4กท7671 — TOYOTA (Altis)";
 const STORAGE_KEY = "wfa_trip_" + PLATE;
 
@@ -736,7 +736,7 @@ async function submitForm() {
     timestamp:   new Date().toISOString(),
   };
   try {
-    if (APPS_SCRIPT_URL !== "https://script.google.com/macros/s/AKfycbzgKq6B-no9rY5H2elzhXUqn7iCfCF_feBmNTJAV9PZwmUDwFxi07IEyONXFT2CnVgxhA/exec") {
+    if (APPS_SCRIPT_URL !== "https://script.google.com/macros/s/AKfycbw5xd4Q1YhZhuKVvIQ4c1KeXPcqtsEelRApN1I4hgSb1BERw5NGHV7UbfvtCYrLqDa6Gg/exec") {
       await fetch(APPS_SCRIPT_URL, {
         method: "POST", mode: "no-cors",
         headers: { "Content-Type": "application/json" },
