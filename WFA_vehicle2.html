@@ -502,7 +502,7 @@ textarea { resize: none; min-height: 78px; }
 </div>
 
 <script>
-const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz_gnw5DdK9o1a6E_MKFHFpcW37xmL2dnCdlQ7_SKdPjWv-0lZSo2wR9gl_XGQxEhsf2A/exec";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzgKq6B-no9rY5H2elzhXUqn7iCfCF_feBmNTJAV9PZwmUDwFxi07IEyONXFT2CnVgxhA/exec";
 const PLATE = "2กก5374 — ISUZU D-Max (4 Door)";
 const STORAGE_KEY = "wfa_trip_" + PLATE;
 
@@ -736,7 +736,7 @@ async function submitForm() {
     timestamp:   new Date().toISOString(),
   };
   try {
-    if (APPS_SCRIPT_URL !== "https://script.google.com/macros/s/AKfycbz_gnw5DdK9o1a6E_MKFHFpcW37xmL2dnCdlQ7_SKdPjWv-0lZSo2wR9gl_XGQxEhsf2A/exec") {
+    if (APPS_SCRIPT_URL !== "https://script.google.com/macros/s/AKfycbzgKq6B-no9rY5H2elzhXUqn7iCfCF_feBmNTJAV9PZwmUDwFxi07IEyONXFT2CnVgxhA/exec") {
       await fetch(APPS_SCRIPT_URL, {
         method: "POST", mode: "no-cors",
         headers: { "Content-Type": "application/json" },
